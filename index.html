@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belya Naturheilpraxis</title>
+  
+  <style>
+    /* Font-Face für Maragsa und Garet hinzufügen */
+    @font-face {
+      font-family: 'Maragsa';
+      src: url('fonts/Maragsa.ttf') format('truetype');
+    }
+    
+    @font-face {
+      font-family: 'Garet';
+      src: url('fonts/Garet.ttf') format('truetype');
+    }
+
+    /* Grundlegendes Styling */
+    body {
+      font-family: 'Garet', sans-serif;
+      color: #464941;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #f6eedf;
+    }
+
+    /* Header und Navigation */
+    header {
+      background-color: #f6eedf;
+      color: #464941;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      height: 135px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo Styling */
+    .logo {
+      position: absolute;
+      left: 40px;
+      top: 10px;
+    }
+
+    .logo img {
+      height: 150px;
+    }
+
+    /* Navigation Styling */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #464941;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Maragsa', sans-serif;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      color: #5a7a4f;
+    }
+
+    /* Mobile Navigation Styles */
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      color: #464941;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #f6eedf;
+      padding-top: 60px;
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+      z-index: 2000;
+    }
+
+    .mobile-nav a {
+      display: block;
+      color: #464941;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      font-family: 'Maragsa', sans-serif;
+    }
+
+    .mobile-nav a:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Globales Section-Design */
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 160px auto 40px auto;
+      font-family: 'Garet', sans-serif;
+      color: #464941;
+      background-color: rgba(246, 238, 223, 0.9);
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      scroll-margin-top: 140px;
+      text-align: justify;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    h1, h2 {
+      font-family: 'Maragsa', sans-serif;
+      color: #464941;
+      text-align: center;
+    }
+
+    /* Spezifisches Styling für Zitate */
+    .quote {
+      font-style: italic;
+      font-size: 1.3em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .quote-author {
+      font-size: 1em;
+      text-align: center;
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* Über mich Styling */
+    #ueber-mich-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: justify;
+    }
+
+    #ueber-mich-content img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive Design Anpassungen */
+    @media (max-width: 768px) {
+      header {
+        justify-content: flex-start;
+        padding: 10px;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-nav a {
+        padding: 15px;
+      }
+
+      section {
+        margin: 120px auto 30px auto;
+        padding: 60px 15px;
+      }
+
+      .quote {
+        font-size: 1.3em;
+      }
+
+      /* Über mich Section im mobilen Format */
+      #ueber-mich-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Header mit Logo und Navigation -->
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="Belya Naturheilpraxis Logo">
+  </div>
+  <!-- Hamburger Icon für Mobile Navigation -->
+  <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#behandlungen">Behandlungen</a>
+    <a href="#ueber-mich">Über mich</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="javascript:void(0)" onclick="toggleMenu()">&#10005; Schließen</a>
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#behandlungen" onclick="toggleMenu()">Behandlungen</a>
+    <a href="#ueber-mich" onclick="toggleMenu()">Über mich</a>
+    <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
+  </div>
+</header>
+
+<!-- Startseite Section -->
+<section id="home">
+  <h1>Willkommen in der Naturheilpraxis Belya!</h1>
+  <p class="quote">„Allah hat sowohl die Krankheit als auch die Heilung erschaffen.“</p>
+  <span class="quote-author">- Hz. Muhammed (s.a.v.)</span>
+  <p>In meiner Praxis steht Ihre Gesundheit und Ihr Wohlbefinden im Mittelpunkt. Mit individuell abgestimmten Behandlungen begleite ich Sie auf Ihrem Weg zu mehr Balance und Lebensqualität.</p>
+</section>
+
+<!-- Behandlungen Section -->
+<section id="behandlungen">
+  <h2>Übersicht der Behandlungen</h2>
+  <ul>
+    <li><strong>Akupunktur</strong> – Traditionelle Technik zur Förderung des Energieflusses.</li>
+    <li><strong>Blutegeltherapie</strong> – Natürliche Methode zur Entgiftung und Schmerzlinderung.</li>
+    <li><strong>Infusionen (z.B. Vitamin C)</strong> – Zur Stärkung des Immunsystems und Förderung der Vitalität.</li>
+    <li><strong>Lymphdrainage</strong> – Unterstützt das Lymphsystem und fördert den Abtransport von Schlacken.</li>
+    <li><strong>Schröpfen</strong> – Zur Förderung der Durchblutung und Linderung von Verspannungen.</li>
+    <li><strong>Beratung</strong> – Individuelle Beratungen zu Ernährung, psychischer Gesundheit und Familienfragen.</li>
+  </ul>
+  <p>Jede Behandlung wird auf Ihre persönlichen Bedürfnisse abgestimmt, um bestmögliche Resultate zu erzielen.</p>
+</section>
+
+<!-- Über mich Section mit Bild -->
+<section id="ueber-mich">
+  <h2>Über mich</h2>
+  <div id="ueber-mich-content">
+    <img src="images/uzel.jpeg" alt="Bild von Sükran Uzel">
+    <p>Mein Name ist Sükran Uzel. Ich bin angelernte Hebamme und war später als Betreuungsassistentin tätig.
+      Heute arbeite ich als Heilpraktikerin und begleite Sie mit einem ganzheitlichen Blick auf Ihre Gesundheit. 
+      Mit meiner langjährigen Erfahrung unterstütze ich Sie gerne auf Ihrem Weg zu mehr Wohlbefinden und Vitalität.</p>
+  </div>
+</section>
+
+<!-- Kontakt Section -->
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p><strong>Naturheilpraxis Belya</strong><br>
+     Heinrich-Sinz-Str. 33<br>
+     89335 Ichenhausen</p>
+  <p>Telefon: <a href="tel:+491744013437">0174 401 3437</a><br>
+     E-Mail: <a href="mailto:sukranuzel@outlook.de">sukranuzel@outlook.de</a></p>
+  <p><strong>Behandlungen nur nach Vereinbarung.</strong></p>
+</section>
+<!-- Footer Section mit Impressum -->
+<footer style="background-color: #f6eedf; color: #464941; text-align: center; padding: 20px; font-family: 'Garet', sans-serif; font-size: 0.9em; width: 100%;">
+  <p>&copy; 2024 Naturheilpraxis Belya</p>
+  
+  <p><strong>Impressum</strong></p>
+  <p>Naturheilpraxis Belya<br>
+     Sükran Uzel<br>
+     Heinrich-Sinz-Str. 33<br>
+     89335 Ichenhausen<br>
+     Telefon: <a href="tel:+491744013437" style="color: #464941;">0174 401 3437</a><br>
+     E-Mail: <a href="mailto:sukranuzel@outlook.de" style="color: #464941;">sukranuzel@outlook.de</a></p>
+
+  <p><strong>Berufsbezeichnung:</strong> Heilpraktikerin (verliehen in Deutschland)</p>
+  
+  <p><strong>Zuständige Aufsichtsbehörde:</strong><br>
+     Landratsamt Günzburg – Gesundheitsamt<br>
+     An der Kapuzinermauer 1, 89312 Günzburg<br>
+     Telefon: 08221 95-0<br>
+     E-Mail: <a href="mailto:poststelle@landkreis-guenzburg.de" style="color: #464941;">poststelle@landkreis-guenzburg.de</a></p>
+
+  <p><strong>Haftung für Inhalte:</strong><br>
+     Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.</p>
+
+  <p><strong>Haftung für Links:</strong><br>
+     Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.</p>
+
+  <p><strong>Urheberrecht:</strong><br>
+     Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p>
+</footer>
+<script>
+  /* Funktion zur Steuerung der Mobile Navigation */
+  function toggleMenu() {
+    const mobileNav = document.getElementById("mobileNav");
+    if (mobileNav.style.display === "block") {
+      mobileNav.style.display = "none";
+    } else {
+      mobileNav.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
