@@ -24,9 +24,8 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
-      background: url('images/background.jpeg') no-repeat center center fixed;
+      background: rgba(246, 238, 223, 0.65) url('images/background.jpeg') no-repeat center center fixed;
       background-size: cover;
-      background-color: #f6eedf;
     }
 
     /* Header und Navigation */
@@ -120,11 +119,11 @@
       margin: 160px auto 40px auto;
       font-family: 'Garet', sans-serif;
       color: #464941;
-      background-color: rgba(246, 238, 223, 0.65); /* 65% transparenter Hintergrund */
+      background-color: rgba(246, 238, 223, 0.85); /* leicht transparenter Hintergrund */
       border-radius: 8px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       scroll-margin-top: 140px;
-      text-align: justify;
+      text-align: center;
       line-height: 1.6;
       font-size: 1.1em;
     }
@@ -144,6 +143,54 @@
       font-family: 'Maragsa', sans-serif;
       color: #464941;
       text-align: center;
+    }
+
+    /* Über mich Section mit Bild */
+    #ueber-mich-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    #ueber-mich-content img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Kontakt Section mit Bild links und Text rechts */
+    #kontakt-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: left;
+      flex-direction: row;
+    }
+
+    #kontakt-content img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #f6eedf;
+      color: #464941;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Garet', sans-serif;
+      font-size: 0.8em;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
 
     /* Responsive Design Anpassungen */
@@ -176,6 +223,12 @@
 
       h1, h2 {
         font-size: 1.5em;
+      }
+
+      /* Über mich und Kontakt Section im mobilen Format */
+      #ueber-mich-content, #kontakt-content {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -238,33 +291,38 @@
 <section id="ueber-mich">
   <h2>Über mich</h2>
   <div id="ueber-mich-content">
-    <img src="images/uzel.jpeg" alt="Bild von Sükran Uzel" style="width:150px; border-radius:8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+    <img src="images/uzel.jpeg" alt="Bild von Sükran Uzel">
     <p>Mein Name ist Sükran Uzel. Ich bin gelernte Hebamme und habe als Betreuungsassistentin gearbeitet. Heute arbeite ich als Heilpraktikerin und begleite Sie mit einem ganzheitlichen Blick auf Ihre Gesundheit. Mit meiner langjährigen Erfahrung unterstütze ich Sie gerne auf Ihrem Weg zu mehr Wohlbefinden und Vitalität.</p>
   </div>
 </section>
 
-<!-- Kontakt Section -->
+<!-- Kontakt Section mit Bild links und Text rechts -->
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <p><strong>Naturheilpraxis Belya</strong><br>
-     Heinrich-Sinz-Str. 33<br>
-     89335 Ichenhausen</p>
-  <p>Telefon: <a href="tel:+491744013437">0174 401 3437</a><br>
-     E-Mail: <a href="mailto:sukranuzel@outlook.de">sukranuzel@outlook.de</a></p>
-  <p><strong>Behandlungen nur nach Vereinbarung.</strong></p>
+  <div id="kontakt-content">
+    <img src="images/contact.jpeg" alt="Kontaktbild">
+    <div>
+      <p><strong>Naturheilpraxis Belya</strong><br>
+         Heinrich-Sinz-Str. 33<br>
+         89335 Ichenhausen</p>
+      <p>Telefon: <a href="tel:+491744013437">0174 401 3437</a><br>
+         E-Mail: <a href="mailto:sukranuzel@outlook.de">sukranuzel@outlook.de</a></p>
+      <p><strong>Behandlungen nur nach Vereinbarung.</strong></p>
+    </div>
+  </div>
 </section>
 
 <!-- Footer Section mit Impressum -->
-<footer style="background-color: #f6eedf; color: #464941; text-align: center; padding: 20px; font-family: 'Garet', sans-serif; font-size: 0.9em; width: 100%;">
+<footer>
   <p>&copy; 2024 Naturheilpraxis Belya</p>
-  
   <p><strong>Impressum</strong></p>
-  <p>Naturheilpraxis Belya<br>
-     Sükran Uzel<br>
-     Heinrich-Sinz-Str. 33<br>
-     89335 Ichenhausen<br>
-     Telefon: <a href="tel:+491744013437" style="color: #464941;">0174 401 3437</a><br>
+  <p>Sükran Uzel<br>Heinrich-Sinz-Str. 33<br>89335 Ichenhausen</p>
+  <p>Telefon: <a href="tel:+491744013437" style="color: #464941;">0174 401 3437</a><br>
      E-Mail: <a href="mailto:sukranuzel@outlook.de" style="color: #464941;">sukranuzel@outlook.de</a></p>
+  <p><strong>Berufsbezeichnung:</strong> Heilpraktikerin (verliehen in Deutschland)</p>
+  <p><strong>Aufsichtsbehörde:</strong> Landratsamt Günzburg – Gesundheitsamt, An der Kapuzinermauer 1, 89312 Günzburg</p>
+  <p><strong>Haftung für Inhalte:</strong> Verantwortlich gemäß § 7 Abs.1 TMG für eigene Inhalte. Keine Haftung für verlinkte externe Inhalte.</p>
+  <p><strong>Urheberrecht:</strong> Die Inhalte auf dieser Seite unterliegen dem deutschen Urheberrecht. Vervielfältigung nur mit schriftlicher Zustimmung.</p>
 </footer>
 
 <script>
