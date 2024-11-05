@@ -129,11 +129,6 @@
       font-size: 1.1em;
     }
 
-    /* Spezifische Stile für Absätze in Sections */
-    section p, section ul {
-      margin: 10px 0;
-    }
-
     /* Listenstil anpassen */
     section ul {
       list-style-type: none;
@@ -239,15 +234,44 @@
   <p>Alle Behandlungen sind individuell auf Ihre Bedürfnisse abgestimmt.</p>
 </section>
 
+<!-- Über mich Section -->
+<section id="ueber-mich">
+  <h2>Über mich</h2>
+  <div id="ueber-mich-content">
+    <img src="images/uzel.jpeg" alt="Bild von Sükran Uzel" style="width:150px; border-radius:8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+    <p>Mein Name ist Sükran Uzel. Ich bin gelernte Hebamme und habe als Betreuungsassistentin gearbeitet. Heute arbeite ich als Heilpraktikerin und begleite Sie mit einem ganzheitlichen Blick auf Ihre Gesundheit. Mit meiner langjährigen Erfahrung unterstütze ich Sie gerne auf Ihrem Weg zu mehr Wohlbefinden und Vitalität.</p>
+  </div>
+</section>
+
+<!-- Kontakt Section -->
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p><strong>Naturheilpraxis Belya</strong><br>
+     Heinrich-Sinz-Str. 33<br>
+     89335 Ichenhausen</p>
+  <p>Telefon: <a href="tel:+491744013437">0174 401 3437</a><br>
+     E-Mail: <a href="mailto:sukranuzel@outlook.de">sukranuzel@outlook.de</a></p>
+  <p><strong>Behandlungen nur nach Vereinbarung.</strong></p>
+</section>
+
+<!-- Footer Section mit Impressum -->
+<footer style="background-color: #f6eedf; color: #464941; text-align: center; padding: 20px; font-family: 'Garet', sans-serif; font-size: 0.9em; width: 100%;">
+  <p>&copy; 2024 Naturheilpraxis Belya</p>
+  
+  <p><strong>Impressum</strong></p>
+  <p>Naturheilpraxis Belya<br>
+     Sükran Uzel<br>
+     Heinrich-Sinz-Str. 33<br>
+     89335 Ichenhausen<br>
+     Telefon: <a href="tel:+491744013437" style="color: #464941;">0174 401 3437</a><br>
+     E-Mail: <a href="mailto:sukranuzel@outlook.de" style="color: #464941;">sukranuzel@outlook.de</a></p>
+</footer>
+
 <script>
   /* Funktion zur Steuerung der Mobile Navigation */
   function toggleMenu() {
     const mobileNav = document.getElementById("mobileNav");
-    if (mobileNav.style.display === "block") {
-      mobileNav.style.display = "none";
-    } else {
-      mobileNav.style.display = "block";
-    }
+    mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
   }
 </script>
 
