@@ -28,6 +28,24 @@
       background-size: cover;
     }
 
+    /* Top Bar Styling */
+    .top-bar {
+      background-color: #5a7a4f; /* Dunkles Grün */
+      color: #fff; /* Weißer Text */
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Abstand für Header und Hauptinhalt */
+    body {
+      padding-top: 50px; /* Platz für Top Bar */
+    }
+
     /* Header und Navigation */
     header {
       background-color: #f6eedf;
@@ -35,7 +53,7 @@
       padding: 20px;
       position: fixed;
       width: 100%;
-      top: 0;
+      top: 50px; /* Direkt unter der Top Bar */
       height: 135px;
       z-index: 1000;
       display: flex;
@@ -235,6 +253,11 @@
 </head>
 <body>
 
+<!-- Top Bar -->
+<div class="top-bar">
+  Behandlungen nur nach Vereinbarung.
+</div>
+
 <!-- Header mit Logo und Navigation -->
 <header>
   <div class="logo">
@@ -300,6 +323,7 @@
 <section id="kontakt">
   <h2>Kontakt</h2>
   <div id="kontakt-content">
+    <img src="images/contact.jpeg" alt="Kontaktbild">
     <div>
       <p><strong>Naturheilpraxis Belya</strong><br>
          Heinrich-Sinz-Str. 33<br>
