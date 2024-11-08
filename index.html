@@ -28,17 +28,33 @@
       background-size: cover;
     }
 
-    /* Top Bar Styling */
+    /* Top Bar Styling mit Marquee-Effekt */
     .top-bar {
       background-color: #5a7a4f; /* Dunkles Grün */
       color: #fff; /* Weißer Text */
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
+    }
+
+    .top-bar span {
+      display: inline-block;
+      padding: 10px 50px;
+      font-size: 14px;
+      animation: marquee 10s linear infinite;
+    }
+
+    /* Marquee-Animation */
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     /* Abstand für Header und Hauptinhalt */
@@ -255,7 +271,10 @@
 
 <!-- Top Bar -->
 <div class="top-bar">
-  Behandlungen nur nach Vereinbarung.
+  <span>Behandlungen nur nach Vereinbarung.</span>
+  <span>Rufen Sie uns an: 0174 401 3437</span>
+  <span>Behandlungen nur nach Vereinbarung.</span>
+  <span>Rufen Sie uns an: 0174 401 3437</span>
 </div>
 
 <!-- Header mit Logo und Navigation -->
